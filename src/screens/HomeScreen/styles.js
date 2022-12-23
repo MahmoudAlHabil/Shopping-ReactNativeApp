@@ -4,9 +4,8 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: "white",
-      padding: 20,
+      paddingHorizontal: 20,
       paddingTop: 50,
-      paddingBottom: 0
     },
     header: {
       flexDirection: 'row',

@@ -3,11 +3,11 @@ import { Text, View, TouchableOpacity, TouchableWithoutFeedback, Image, Keyboard
 import Icon from '@expo/vector-icons/Ionicons';
 import { Button, Input } from '../../components';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 
-const CreateAccountScreen = (props) => {
-
-  const { navigation } = props;
+const CreateAccountScreen = () => {
+  const { navigate } = useNavigation()
   const [firstName, setFisrtName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -28,7 +28,7 @@ const CreateAccountScreen = (props) => {
     if (firstName === '' || lastName === '' || email === '' || password === '') {
       setError(true)
     } else {
-      navigation.navigate('HomeScreen');
+      navigate('HomeTab');
     }
   }
 
@@ -71,7 +71,7 @@ const CreateAccountScreen = (props) => {
             wrapperStyle={styles.button} />
         </View>
         <TouchableOpacity
-          onPress={() => navigation.navigate('LoginScreen')}
+          onPress={() => navigate('LoginScreen')}
           style={styles.haveAccountTouch}>
           <Text style={styles.haveAccountText}>Already have an account?</Text>
         </TouchableOpacity>

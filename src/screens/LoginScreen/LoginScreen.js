@@ -3,9 +3,10 @@ import { Text, View, TouchableOpacity, Image, ImageBackground, TouchableWithoutF
 import Icon from '@expo/vector-icons/Ionicons';
 import { Button, Input } from '../../components';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
-const LoginScreen = (props) => {
-  const { navigation } = props;
+const LoginScreen = () => {
+  const { navigate } = useNavigation()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
@@ -24,7 +25,7 @@ const LoginScreen = (props) => {
     if (email === '' || password === '') {
       setError(true)
     } else {
-      navigation.navigate('HomeScreen');
+      navigate('HomeTab');
     }
   }
 
@@ -61,7 +62,7 @@ const LoginScreen = (props) => {
           </View>
           <View style={styles.registerAction}>
             <Text>Don't have an account? </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
+            <TouchableOpacity onPress={() => navigate('RegisterScreen')}>
               <Text style={styles.registerText}>Register now</Text>
             </TouchableOpacity>
           </View>

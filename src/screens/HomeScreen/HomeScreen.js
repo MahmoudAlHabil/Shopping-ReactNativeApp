@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, FlatList, Image, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, FlatList, Image, Text, ScrollView } from 'react-native';
 import styles from './styles';
 import Icon from '@expo/vector-icons/MaterialIcons'
-import { Categories, Products } from './components';
 import { categories, products, sliders } from '../../utils/dummyData';
+import { Category, Product } from '../../components';
 
 
 const HomeScreen = () => {
@@ -32,7 +32,7 @@ const HomeScreen = () => {
           <Text style={styles.sectionText}>Newest Product</Text>
           <FlatList
             data={products}
-            renderItem={({ item }) => <Products product={item} />}
+            renderItem={({ item }) => <Product product={item} />}
             keyExtractor={(item, index) => index}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -43,7 +43,7 @@ const HomeScreen = () => {
           <Text style={styles.sectionText}>Product Categories</Text>
           <FlatList
             data={categories}
-            renderItem={({ item }) => <Categories category={item} />}
+            renderItem={({ item }) => <Category category={item} />}
             keyExtractor={(item, index) => index}
             horizontal
             showsHorizontalScrollIndicator={false}

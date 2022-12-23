@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
         marginVertical: 6
     },
     button: {
-        backgroundColor: '#54a8fc',
         marginTop: 12,
     },
     haveAccountText: {

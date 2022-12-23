@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   button: {
-    backgroundColor: '#54a8fc',
     marginTop: 12,
   },
   registerAction: {
