@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     input: {
         marginTop: 10,
         borderRadius: 8,
-        height: 150,
+        height: 100,
         paddingTop: 6,
         justifyContent: 'flex-start',
     },
@@ -100,7 +100,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 20,
         marginBottom: 20,
-        marginHorizontal: 20,
     },
     counterWrapper: {
         flexDirection: 'row',

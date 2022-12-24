@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import { View, Text, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { Button, Input } from '../../components';
 import styles from './styles'
@@ -11,7 +11,7 @@ const ProfileScreen = () => {
 
     return (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>Profile</Text>
                 </View>
@@ -46,7 +46,7 @@ const ProfileScreen = () => {
                         title='Save'
                         wrapperStyle={styles.button} />
                 </View>
-            </View>
+            </ScrollView>
         </TouchableWithoutFeedback>
     )
 }

@@ -1,4 +1,4 @@
-import { View, Text, Image, ImageBackground, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import { View, Text, Image, ImageBackground, TouchableOpacity, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import styles from './styles'
 import Icon from '@expo/vector-icons/Ionicons'
@@ -35,7 +35,7 @@ const ProductDetailsScreen = () => {
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <ImageBackground source={product.image} style={styles.image}>
           <View style={styles.header}>
             <TouchableOpacity style={styles.backIconWrapper} activeOpacity={0.8}
@@ -75,23 +75,23 @@ const ProductDetailsScreen = () => {
             placeholder='Enter your notes'
             onChangeText={setNotes}
             value={notes} />
-        </View>
-        <View style={styles.footer}>
-            <View style={styles.counterWrapper}>
-              <TouchableOpacity style={styles.counterButton} activeOpacity={0.8}
-                onPress={() => handleCounter('decrement')}>
-                <Icon name="remove" size={24} color="white" />
-              </TouchableOpacity>
-              <Text style={styles.counterText}>{counter}</Text>
-              <TouchableOpacity style={styles.counterButton} activeOpacity={0.8}
-                onPress={() => handleCounter('increment')}>
-                <Icon name="add" size={24} color="white" />
-              </TouchableOpacity>
-            </View>
-            <Button title={isAddToCart ? 'Add to cart' : 'Remove from cart'} wrapperStyle={styles.button}
-              onPress={handleAddRemoveCart} />
+            <View style={styles.footer}>
+                <View style={styles.counterWrapper}>
+                  <TouchableOpacity style={styles.counterButton} activeOpacity={0.8}
+                    onPress={() => handleCounter('decrement')}>
+                    <Icon name="remove" size={24} color="white" />
+                  </TouchableOpacity>
+                  <Text style={styles.counterText}>{counter}</Text>
+                  <TouchableOpacity style={styles.counterButton} activeOpacity={0.8}
+                    onPress={() => handleCounter('increment')}>
+                    <Icon name="add" size={24} color="white" />
+                  </TouchableOpacity>
+                </View>
+                <Button title={isAddToCart ? 'Add to cart' : 'Remove from cart'} wrapperStyle={styles.button}
+                  onPress={handleAddRemoveCart} />
+              </View>
           </View>
-      </View>
+        </ScrollView>
     </TouchableWithoutFeedback>
   )
 }
